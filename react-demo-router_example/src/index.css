@@ -23,58 +23,60 @@ a {
   font-weight: 500;
   color: white;
   text-decoration: inherit;
-  padding:0.5rem 0;
+  padding: 0.5rem 0;
   transition: all ease 5s;
 }
 a::after {
   display: block;
-content: '';
-height: 2px;
-width: 0;
-background-color: orange;  transition: all ease .5s;
+  content: "";
+  height: 2px;
+  width: 0;
+  background-color: orange;
+  transition: all ease 0.5s;
 }
 
 a:hover::after {
-  content: '';
+  content: "";
   width: 100%;
-  }
+}
 
 a.active::after {
-height: 2px;
-width: 100%;
-background-color: orange;  transition: all ease .3s;
+  height: 2px;
+  width: 100%;
+  background-color: orange;
+  transition: all ease 0.3s;
 }
 
 h1 a {
-  color:white;
+  color: white;
 }
 h1 a:hover {
-  color:inherit;
+  color: inherit;
 }
 
-header{
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-footer{
-position: fixed;
-bottom: 0;
-width: 100%;
-text-align: center;
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
-header, footer {
+header,
+footer {
   background: #333;
   color: #fff;
-  padding: 1rem 4rem
+  padding: 1rem 4rem;
 }
 
 nav ul li {
   display: inline-block;
   padding: 1rem;
-
 }
 main {
   padding: 4rem;
@@ -94,12 +96,21 @@ h1 {
   background: white;
   border-radius: 5px;
   color: #333;
-  padding:1rem
+  padding: 1rem;
 }
 
-.box p:first-child{
+.box p:first-child {
   font-weight: 700;
 }
-.box p:last-child{
-font-style: italic;
+.box p:last-child {
+  font-style: italic;
+}
+
+.post h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.post p {
+  margin-top: 0rem;
 }

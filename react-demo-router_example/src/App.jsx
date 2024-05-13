@@ -7,6 +7,7 @@ import Persons from "./routes/Persons.jsx";
 import Root from "./routes/Root.jsx";
 import Users from "./routes/Users.jsx";
 import axios from "axios";
+import Posts from "./routes/Posts.jsx";
 
 function App() {
   const [persons, setPersons] = useState([
@@ -16,6 +17,7 @@ function App() {
   ]);
 
   const [users, setUsers] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     // Make a request for a user with a given ID
@@ -27,13 +29,23 @@ function App() {
       .catch((error) => {
         // handle error
         console.log(error);
-      })
-      .finally(() => {
-        // always executed
       });
   }, []);
 
-  console.log(users);
+  useEffect(() => {
+    // Make a request for a user with a given ID
+    axios
+      .get("http://localhost:3001/posts")
+      .then((res) => {
+        setPosts(res.data);
+      })
+      .catch((error) => {
+        // handle error
+        console.log(error);
+      });
+  }, []);
+
+  console.log(posts);
 
   const router = createBrowserRouter([
     {
@@ -45,6 +57,7 @@ function App() {
         { path: "/about", element: <About /> },
         { path: "/persons", element: <Persons persons={persons} /> },
         { path: "/users", element: <Users users={users} /> },
+        { path: "/posts", element: <Posts posts={posts} /> },
       ],
     },
   ]);
