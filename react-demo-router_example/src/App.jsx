@@ -19,6 +19,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
 
+  // GET users data
   useEffect(() => {
     // Make a request for a user with a given ID
     axios
@@ -32,6 +33,7 @@ function App() {
       });
   }, []);
 
+  // GET posts data
   useEffect(() => {
     // Make a request for a user with a given ID
     axios
@@ -45,7 +47,7 @@ function App() {
       });
   }, []);
 
-  console.log(posts);
+  // console.log(posts);
 
   const router = createBrowserRouter([
     {
