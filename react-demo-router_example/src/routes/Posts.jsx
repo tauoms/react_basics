@@ -1,4 +1,4 @@
-const Posts = ({ posts }) => {
+const Posts = ({ posts, updatePostStatus }) => {
   return (
     <div>
       {posts.map((post) => (
@@ -9,9 +9,11 @@ const Posts = ({ posts }) => {
           </h4>
           <p>{post.content}</p>
           <p>
-            <strong>Status:</strong> {post.published ? "true" : "false"}
+            <strong>Status:</strong> {post.published ? "Read" : "Unread"}
           </p>
-          <button>Switch status</button>
+          <button onClick={() => updatePostStatus(post.id, post.published)}>
+            {post.published ? "Mark Unread" : "Mark Read"}
+          </button>
           <hr />
         </div>
       ))}

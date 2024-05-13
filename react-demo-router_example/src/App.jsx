@@ -49,6 +49,23 @@ function App() {
 
   // console.log(posts);
 
+  const updatePostStatus = (id, published) => {
+    axios
+      .put(`http://localhost:3001/posts/${id}`, { published: !published })
+      .then((res) => {
+        // Assuming the response contains the updated post data, update the posts state
+        setPosts(
+          posts.map((post) =>
+            post.id === id ? { ...post, published: !published } : post
+          )
+        );
+      })
+      .catch((error) => {
+        // handle error
+        console.log(error);
+      });
+  };
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -59,7 +76,10 @@ function App() {
         { path: "/about", element: <About /> },
         { path: "/persons", element: <Persons persons={persons} /> },
         { path: "/users", element: <Users users={users} /> },
-        { path: "/posts", element: <Posts posts={posts} /> },
+        {
+          path: "/posts",
+          element: <Posts posts={posts} updatePostStatus={updatePostStatus} />,
+        },
       ],
     },
   ]);
