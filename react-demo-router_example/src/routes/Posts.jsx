@@ -10,10 +10,11 @@ const Posts = ({ posts, updatePostStatus }) => {
           <p>{post.content}</p>
           <p>
             <strong>Status:</strong> {post.published ? "Read" : "Unread"}
+            <br />
+            <button onClick={() => updatePostStatus(post.id, post.published)}>
+              {post.published ? "Mark Unread" : "Mark Read"}
+            </button>
           </p>
-          <button onClick={() => updatePostStatus(post.id, post.published)}>
-            {post.published ? "Mark Unread" : "Mark Read"}
-          </button>
           <hr />
         </div>
       ))}

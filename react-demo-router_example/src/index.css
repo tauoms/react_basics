@@ -113,4 +113,18 @@ h1 {
 
 .post p {
   margin-top: 0rem;
+  margin-bottom: 2rem;
+}
+
+button {
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  color: #cbcaca;
+  border-radius: 20px;
+  border: none;
+}
+
+hr {
+  border: 1px solid #333;
 }
