@@ -1,6 +1,6 @@
 # Posts update
 
-My solution for an assignment asking for making a JSON property toggleable by user between true and false in a React app by utilizing axios. In this example it is done by clicking the "Mark read" / "Mark unread" buttons on the "Posts" page.
+My solution for an assignment asking to make a JSON property toggleable by user between true and false in a React app by utilizing axios. In this example you can do this by clicking the "Mark read" / "Mark unread" buttons on the "Posts" page.
 
 ## Technologies used
 
