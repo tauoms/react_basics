@@ -21,21 +21,18 @@ function App() {
 
   // GET users data
   useEffect(() => {
-    // Make a request for a user with a given ID
     axios
       .get("https://jsonplaceholder.typicode.com/users")
       .then((res) => {
         setUsers(res.data);
       })
       .catch((error) => {
-        // handle error
         console.log(error);
       });
   }, []);
 
   // GET posts data
   useEffect(() => {
-    // Make a request for a user with a given ID
     axios
       .get("http://localhost:3001/posts")
       .then((res) => {
@@ -50,10 +47,12 @@ function App() {
   // console.log(posts);
 
   const updatePostStatus = (id, published) => {
+    const postToUpdate = posts.find((post) => post.id === id);
+    const updatedPost = { ...postToUpdate, published: !published };
+
     axios
-      .put(`http://localhost:3001/posts/${id}`, { published: !published })
+      .put(`http://localhost:3001/posts/${id}`, updatedPost)
       .then((res) => {
-        // Assuming the response contains the updated post data, update the posts state
         setPosts(
           posts.map((post) =>
             post.id === id ? { ...post, published: !published } : post
@@ -61,7 +60,6 @@ function App() {
         );
       })
       .catch((error) => {
-        // handle error
         console.log(error);
       });
   };
