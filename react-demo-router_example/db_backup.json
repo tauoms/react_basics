@@ -2,7 +2,7 @@
   "posts": [
     {
       "id": 1,
-      "title": "First Post",
+      "title": "First MARGIT",
       "author": "John Doe",
       "content": "This is the first post content.",
       "published": true,
